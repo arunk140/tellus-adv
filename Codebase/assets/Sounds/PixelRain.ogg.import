@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PixelRain.ogg-c5386ed4b82d1dabc63f2daa87ef8107.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/PixelRain.ogg"
+dest_files=[ "res://.import/PixelRain.ogg-c5386ed4b82d1dabc63f2daa87ef8107.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
