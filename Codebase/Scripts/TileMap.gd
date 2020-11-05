@@ -42,7 +42,6 @@ func load_new_chunk():
 	loadMax = maxChunk * CHUNK_SIZE
 	var temp = 0
 	for loc in range(loadMin, loadMax, TILE_SIZE):
-		print(loc)
 		addTile(loc, 270, "10")
 		for inc in range(3):
 			addTile(loc, 270+((inc+1)*32), "4")

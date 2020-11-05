@@ -6,7 +6,7 @@ const GRAVITY = 20
 const MAXFALLSPEED = 1000
 const RL_ACCEL = 10
 const MAX_RL_SPEED = 300
-const MAX_JUMP_HEIGHT = -600
+const MAX_JUMP_HEIGHT = -500
 
 var motion = Vector2()
 
