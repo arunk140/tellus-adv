@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/PauseScreen.gd" type="Script" id=2]
+
+[node name="Pause Screen" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 0.47451 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.5
+margin_top = -10.0
+margin_right = 34.5
+margin_bottom = 10.0
+custom_colors/font_color = Color( 1, 0.443137, 0.443137, 1 )
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -39.0
+margin_top = -38.4619
+margin_right = 39.0
+margin_bottom = -18.4619
+custom_colors/font_color = Color( 1, 0.407843, 0.407843, 1 )
+text = "Fullscreen"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.0
+margin_top = 20.6855
+margin_right = 67.0
+margin_bottom = 40.6855
+custom_colors/font_color = Color( 1, 0.407843, 0.407843, 1 )
+text = "Back to Main Menu"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitBtn" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 222.938
+margin_top = -164.317
+margin_right = 300.938
+margin_bottom = -144.317
+custom_colors/font_color = Color( 1, 0.407843, 0.407843, 1 )
+text = "Exit"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ContinueBtn" to="." method="_on_ContinueBtn_pressed"]
+[connection signal="pressed" from="FullscreenBtn" to="." method="_on_FullscreenBtn_pressed"]
+[connection signal="pressed" from="MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
+[connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
