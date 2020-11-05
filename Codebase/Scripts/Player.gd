@@ -24,10 +24,14 @@ func _physics_process(_delta):
 		motion.x -= RL_ACCEL
 		$Sprite.flip_h = true
 		$Sprite.play('run')
+	elif Input.is_action_pressed("ui_down"):
+		$Sprite.play('crouch')
+		motion.x = 0
 	else:
 		$Sprite.play('idle')
 		motion.x = 0
 		
+	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = MAX_JUMP_HEIGHT
