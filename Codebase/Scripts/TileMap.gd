@@ -18,8 +18,6 @@ var _tileset
 func _ready():
 	_tileset = get_tileset()
 	load_new_chunk()
-
-	
 	
 func _process(_delta):
 	var current_pos = get_node("../Player/Camera2D").get_camera_position()
@@ -42,13 +40,30 @@ func load_new_chunk():
 	loadMax = maxChunk * CHUNK_SIZE
 	var temp = 0
 	for loc in range(loadMin, loadMax, TILE_SIZE):
-		addTile(loc, 270, "10")
-		for inc in range(3):
-			addTile(loc, 270+((inc+1)*32), "4")
-			temp = inc
-		addTile(loc, 270+((temp+2)*32), "7")
+		var extratiles = randa([0,0,1,2,3])
+		
+		var added = addTile(loc, 270, "false")
+		if (added):
+			for dec in range(extratiles):
+				addTile(loc, 270-((dec+1)*TILE_SIZE), "false")
+			for inc in range(3):
+				addTile(loc, 270+((inc+1)*TILE_SIZE), "4")
+				temp = inc
+			addTile(loc, 270+((temp+2)*TILE_SIZE), "7")
 
 func addTile(x, y, tileID):
+	if tileID == "false":
+		tileID = randa(["10", "1"])
+		
 	var tile_loc = int(x)-(int(x)%TILE_SIZE) + 1
-	var tile_pos = world_to_map(Vector2(tile_loc, y))
-	set_cellv(tile_pos, _tileset.find_tile_by_name(tileID))
+	var vec = Vector2(tile_loc, y)
+	var tile_pos = world_to_map(vec)
+	
+	var tempn = get_cellv(tile_pos)
+	if tempn == -1:
+		set_cellv(tile_pos, _tileset.find_tile_by_name(tileID))
+		return true
+	else:
+		return false
+func randa(array : Array):
+	return array[randi() % len(array)]

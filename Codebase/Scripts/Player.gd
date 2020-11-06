@@ -33,7 +33,7 @@ func _physics_process(_delta):
 		
 	
 	if is_on_floor():
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			motion.y = MAX_JUMP_HEIGHT
 	else:
 		$Sprite.play('jump')

@@ -115,7 +115,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 16.5481 )
+extents = Vector2( 7.10817, 16 )
 
 [node name="BaseWorld" type="Node"]
 pause_mode = 2
@@ -139,16 +139,13 @@ pause_mode = 1
 position = Vector2( 320.895, 157.85 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 19 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 1.52423, -1.69044 )
+position = Vector2( -2.06619, -0.877518 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
